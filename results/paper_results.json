@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "paper_title": "X-ModalProof: Real-Time Explainable Ownership Verification for Multimodal and Edge-Deployed AI Models",
+    "mode": "frozen_paper_reported",
+    "last_updated": "2026-04-20",
+    "notes": [
+      "This file stores paper-reported/frozen reference values and provenance.",
+      "Values are intentionally null when the paper/handoff does not provide exact numbers.",
+      "Artifact regeneration scripts read this file and do not rerun full experiments."
+    ]
+  },
+  "tables": {
+    "table3_detection_accuracy": [],
+    "table4_attribution_alignment": [],
+    "table5_internal_baselines": [],
+    "table6_threshold_sensitivity": [],
+    "table7_trigger_size": [],
+    "table8_repeatability": []
+  },
+  "figures": {
+    "figure2_accuracy": {"source_table": "table5_internal_baselines", "status": "regen_from_frozen"},
+    "figure3_robustness_drop": {"source_table": "table3_detection_accuracy", "status": "regen_from_frozen"},
+    "figure4_alignment": {"source_table": "table4_attribution_alignment", "status": "regen_from_frozen"},
+    "figure7_latency": {"source_table": "table5_internal_baselines", "status": "regen_from_frozen"},
+    "figure8_radar": {"source_table": "table5_internal_baselines", "status": "regen_from_frozen"}
+  }
+}

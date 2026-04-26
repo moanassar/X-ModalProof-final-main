@@ -1,0 +1,1 @@
+{"experiment": {"name": "text_b3_seed0", "modality": "text", "baseline": "B3", "seed": 0, "output_dir": "outputs"}}

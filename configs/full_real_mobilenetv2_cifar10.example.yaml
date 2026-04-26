@@ -1,0 +1,42 @@
+{
+  "experiment": {
+    "name": "image_mobilenetv2_cifar10_seed0",
+    "execution_mode": "real_full",
+    "task": "image_classification",
+    "modality": "image",
+    "seed": 0,
+    "output_dir": "outputs/full_real/image_mobilenetv2_cifar10_seed0"
+  },
+  "manifest": {
+    "path": "data/manifests/datasets_manifest.yaml"
+  },
+  "dataset": {
+    "name": "cifar10"
+  },
+  "model": {
+    "name": "mobilenetv2",
+    "num_labels": 10
+  },
+  "training": {
+    "device": "auto",
+    "image_size": 96,
+    "max_train_samples": 10000,
+    "max_eval_samples": 2000,
+    "batch_size": 32,
+    "epochs": 1,
+    "learning_rate": 0.0003
+  },
+  "triggers": {
+    "trigger_type": "patch",
+    "default_location": "bottom_right",
+    "default_opacity": 1.0
+  },
+  "watermark": {
+    "signature_method": "centroid",
+    "threshold_selection": "maximize_f1",
+    "threshold_search_step": 0.005
+  },
+  "reproducibility": {
+    "deterministic": true
+  }
+}

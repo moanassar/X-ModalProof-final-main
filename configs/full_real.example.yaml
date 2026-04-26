@@ -1,0 +1,24 @@
+{
+  "experiment": {
+    "name": "full_real_text_distilbert_agnews_seed0",
+    "execution_mode": "real_full",
+    "modality": "text",
+    "seed": 0,
+    "output_dir": "outputs/full_real"
+  },
+  "manifest": {
+    "path": "data/manifests/datasets_manifest.yaml"
+  },
+  "dataset": {
+    "name": "ag_news",
+    "root": "data/processed/text/ag_news"
+  },
+  "model": {
+    "name": "distilbert",
+    "checkpoint": "distilbert-base-uncased"
+  },
+  "training": {
+    "epochs": 3,
+    "batch_size": 32
+  }
+}

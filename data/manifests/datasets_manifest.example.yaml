@@ -1,0 +1,40 @@
+{
+  "raw": {
+    "ag_news": "data/raw/ag_news",
+    "squad_v2": "data/raw/squad_v2",
+    "cifar10": "data/raw/cifar10",
+    "flickr30k": "data/raw/flickr30k",
+    "pile": "data/raw/trigger_sources/pile",
+    "coco": "data/raw/trigger_sources/coco",
+    "visual_genome": "data/raw/trigger_sources/visual_genome"
+  },
+  "processed": {
+    "ag_news_train_csv": "data/processed/text/ag_news/train.csv",
+    "ag_news_validation_csv": "data/processed/text/ag_news/validation.csv",
+    "ag_news_test_csv": "data/processed/text/ag_news/test.csv",
+    "ag_news_text_triggers_csv": "data/processed/triggers/text/ag_news_triggers.csv",
+    "cifar10_train_csv": "data/processed/image/cifar10/train.csv",
+    "cifar10_validation_csv": "data/processed/image/cifar10/validation.csv",
+    "cifar10_test_csv": "data/processed/image/cifar10/test.csv",
+    "cifar10_train_dir": "data/processed/image/cifar10/train",
+    "cifar10_validation_dir": "data/processed/image/cifar10/validation",
+    "cifar10_test_dir": "data/processed/image/cifar10/test",
+    "cifar10_image_triggers_json": "data/processed/triggers/image/cifar10_triggers.json",
+    "squad_v2_train_jsonl": "data/processed/text/squad_v2/train.jsonl",
+    "squad_v2_validation_jsonl": "data/processed/text/squad_v2/validation.jsonl",
+    "squad_v2_test_jsonl": "data/processed/text/squad_v2/test.jsonl",
+    "squad_v2_text_triggers_csv": "data/processed/triggers/text/squad_v2_triggers.csv",
+    "flickr30k_train": "data/processed/multimodal/flickr30k/train.jsonl",
+    "flickr30k_val": "data/processed/multimodal/flickr30k/val.jsonl",
+    "flickr30k_test": "data/processed/multimodal/flickr30k/test.jsonl",
+    "flickr30k_train_csv": "data/processed/multimodal/flickr30k/train.csv",
+    "flickr30k_validation_csv": "data/processed/multimodal/flickr30k/validation.csv",
+    "flickr30k_test_csv": "data/processed/multimodal/flickr30k/test.csv",
+    "flickr30k_clip_triggers_csv": "data/processed/triggers/multimodal/flickr30k_clip_triggers.csv",
+    "flickr30k_vilt_triggers_csv": "data/processed/triggers/multimodal/flickr30k_vilt_triggers.csv",
+    "flickr30k_vilt_triggers_json": "data/processed/triggers/multimodal/flickr30k_vilt_triggers.json"
+  },
+  "outputs": {
+    "full_real_root": "outputs/full_real"
+  }
+}

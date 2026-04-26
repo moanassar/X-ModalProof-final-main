@@ -1,0 +1,2 @@
+# Runtime intentionally uses Python standard library only for Codex reproducibility.
+# No external packages are required for smoke/debug/full text pipeline.

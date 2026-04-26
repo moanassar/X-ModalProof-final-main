@@ -1,0 +1,11 @@
+{
+  "experiment": {"name": "base_text_b4_seed0", "modality": "text", "baseline": "B4", "seed": 0, "output_dir": "outputs"},
+  "dataset": {"name": "synthetic_text", "root": "data", "synthetic": {"n_train": 256, "n_val": 128, "n_test": 128}},
+  "preprocessing": {"max_length": 64, "vocab_size": 512},
+  "triggers": {"source": "fixed", "num_triggers": 30, "trigger_ratio": 0.2, "phrases": ["quartz zephyr", "heliotrope vector", "umbra lattice", "ember cipher"]},
+  "model": {"name": "simple_text", "embedding_dim": 64, "num_labels": 4},
+  "watermark": {"signature_method": "centroid", "normalize_embeddings": true, "lambda_align": 1.0, "lambda_sep": 0.1, "margin_gamma": 0.2, "threshold_selection": "maximize_f1", "threshold_search_step": 0.005},
+  "optimizer": {"name": "adamw", "lr": 0.001, "weight_decay": 0.01},
+  "training": {"epochs": 3, "batch_size": 32},
+  "reproducibility": {"deterministic": true, "seeds": [0, 1, 2, 3, 4]}
+}

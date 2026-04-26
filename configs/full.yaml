@@ -1,0 +1,68 @@
+{
+  "experiment": {
+    "name": "full_text_b4_seed0",
+    "modality": "text",
+    "baseline": "B4",
+    "seed": 0,
+    "output_dir": "outputs",
+    "execution_mode": "scaffold_full"
+  },
+  "dataset": {
+    "name": "synthetic_text",
+    "root": "data",
+    "synthetic": {
+      "n_train": 1024,
+      "n_val": 256,
+      "n_test": 256
+    }
+  },
+  "preprocessing": {
+    "max_length": 64,
+    "vocab_size": 1024
+  },
+  "triggers": {
+    "source": "fixed",
+    "num_triggers": 30,
+    "trigger_ratio": 0.2,
+    "phrases": [
+      "quartz zephyr",
+      "heliotrope vector",
+      "umbra lattice",
+      "ember cipher",
+      "cobalt mnemonic"
+    ]
+  },
+  "model": {
+    "name": "simple_text",
+    "embedding_dim": 64,
+    "num_labels": 4
+  },
+  "watermark": {
+    "signature_method": "centroid",
+    "normalize_embeddings": true,
+    "lambda_align": 1.0,
+    "lambda_sep": 0.1,
+    "margin_gamma": 0.2,
+    "threshold_selection": "maximize_f1",
+    "threshold_search_step": 0.0025
+  },
+  "optimizer": {
+    "name": "adamw",
+    "lr": 0.0008,
+    "weight_decay": 0.01
+  },
+  "training": {
+    "epochs": 3,
+    "batch_size": 32
+  },
+  "reproducibility": {
+    "deterministic": true,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}

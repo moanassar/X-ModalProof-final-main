@@ -1,0 +1,40 @@
+{
+  "experiment": {
+    "name": "multimodal_clip_flickr30k_seed0",
+    "execution_mode": "real_full",
+    "task": "multimodal_verification",
+    "modality": "multimodal",
+    "seed": 0,
+    "output_dir": "outputs/full_real/multimodal_clip_flickr30k_seed0"
+  },
+  "manifest": {
+    "path": "data/manifests/datasets_manifest.yaml"
+  },
+  "dataset": {
+    "name": "flickr30k"
+  },
+  "model": {
+    "name": "openai/clip-vit-base-patch32",
+    "backend": "transformers_clip",
+    "local_files_only": true
+  },
+  "training": {
+    "device": "auto",
+    "image_size": 224,
+    "batch_size": 8,
+    "max_samples": 5000,
+    "max_eval_samples": 1000
+  },
+  "triggers": {
+    "mode": "pair"
+  },
+  "watermark": {
+    "signature_method": "centroid",
+    "embedding_mode": "average_image_text_normalized",
+    "threshold_selection": "maximize_f1",
+    "threshold_search_step": 0.005
+  },
+  "reproducibility": {
+    "deterministic": true
+  }
+}

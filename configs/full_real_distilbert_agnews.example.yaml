@@ -1,0 +1,40 @@
+{
+  "experiment": {
+    "name": "text_distilbert_agnews_seed0",
+    "execution_mode": "real_full",
+    "task": "text_classification",
+    "modality": "text",
+    "seed": 0,
+    "output_dir": "outputs/full_real/text_distilbert_agnews_seed0"
+  },
+  "manifest": {
+    "path": "data/manifests/datasets_manifest.yaml"
+  },
+  "dataset": {
+    "name": "ag_news"
+  },
+  "model": {
+    "name": "distilbert-base-uncased",
+    "num_labels": 4
+  },
+  "training": {
+    "device": "auto",
+    "max_train_samples": 5000,
+    "max_eval_samples": 2000,
+    "max_length": 128,
+    "batch_size": 16,
+    "epochs": 1,
+    "learning_rate": 2e-5
+  },
+  "triggers": {
+    "injection_strategy": "append"
+  },
+  "watermark": {
+    "signature_method": "centroid",
+    "threshold_selection": "maximize_f1",
+    "threshold_search_step": 0.005
+  },
+  "reproducibility": {
+    "deterministic": true
+  }
+}

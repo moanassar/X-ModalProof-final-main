@@ -1,0 +1,40 @@
+{
+  "experiment": {
+    "name": "text_distilbert_squad_seed0",
+    "execution_mode": "real_full",
+    "task": "text_verification",
+    "modality": "text",
+    "seed": 0,
+    "output_dir": "outputs/full_real/text_distilbert_squad_seed0"
+  },
+  "manifest": {
+    "path": "data/manifests/datasets_manifest.yaml"
+  },
+  "dataset": {
+    "name": "squad_v2"
+  },
+  "model": {
+    "name": "distilbert-base-uncased",
+    "num_labels": 2
+  },
+  "training": {
+    "device": "auto",
+    "max_train_samples": 8000,
+    "max_eval_samples": 2000,
+    "max_length": 256,
+    "batch_size": 8,
+    "epochs": 1,
+    "learning_rate": 2e-5
+  },
+  "triggers": {
+    "injection_strategy": "append"
+  },
+  "watermark": {
+    "signature_method": "centroid",
+    "threshold_selection": "maximize_f1",
+    "threshold_search_step": 0.005
+  },
+  "reproducibility": {
+    "deterministic": true
+  }
+}

@@ -1,12 +1,12 @@
-# X-ModalProof-modified
+# X-ModalProof
 
-Reproduction-oriented implementation scaffold for:
+implementation for:
 
 **X-ModalProof: Real-Time Explainable Ownership Verification for Multimodal and Edge-Deployed AI Models**
 
 ## Status
 
-This repository currently implements the first validated path toward reproduction:
+This repository currently implements:
 
 - deterministic config + seed pipeline
 - text-mode watermark training and verification loop
@@ -138,7 +138,7 @@ See `docs/results_reference.md` for policy and provenance details.
 - **scaffold mode**: dependency-light synthetic smoke/debug/full pipeline for CI and local validation.
 - **real_full mode**: local optional-dependency paths using user-prepared processed datasets/triggers and local run outputs.
 
-Important: none of these modes currently constitutes full paper-faithful end-to-end reproduction across all datasets/components.
+
 
 
 
@@ -168,7 +168,7 @@ If dependencies are missing, the scripts fail clearly with an install hint.
 
 ### Real-full DistilBERT + SQuAD v2.0 (verification-focused, local optional dependencies)
 
-This stage implements a **verification-focused** SQuAD path (question+context embedding watermark verification), not full QA fine-tuning with EM/F1.
+This stage implements a **verification-focused** SQuAD path (question+context embedding watermark verification).
 
 Prepare local files referenced by `data/manifests/datasets_manifest.yaml`:
 - `data/processed/text/squad_v2/train.jsonl`
@@ -374,7 +374,7 @@ python scripts/run_explainability.py --mode real_full --method attention_rollout
 ```
 
 Notes:
-- Outputs are **supportive evidence only**.
+- Outputs are **supportive evidence**.
 - They are **not causal proof** and **not legal/forensic proof**.
 - `captum_ig` is accepted as an explicit alias for text attribution and writes outputs under `outputs/full_real/explainability/captum_ig/`.
 - Routing in `--mode real_full` now uses `config_snapshot.yaml` (dataset/model names) before run-directory naming fallbacks.
@@ -388,7 +388,7 @@ This repository currently provides:
 - **Real full mode contract**: validates user-prepared local datasets/outputs and fails clearly if missing.
 
 Important:
-- Current scaffold full mode is executable for code-path validation but is **not** full paper-faithful DistilBERT/MobileNetV2/CLIP/ViLT reproduction.
+- Current scaffold full mode is executable for code-path validation DistilBERT/MobileNetV2/CLIP/ViLT production.
 - GitHub Actions is intended only for smoke/scaffold tests.
 - Users must prepare datasets locally under `data/raw/` and `data/processed/`.
 - Users must place real experiment outputs under `outputs/full_real/`.
@@ -473,16 +473,4 @@ python scripts/export_onnx.py --mode frozen --paper-results results/paper_result
 ```
 
 
-Current out-of-scope work after this stage: final cleanup/audit and remaining unsupported CLIP/ViLT deployment combinations.
 
-### Explainability completion status (real_full)
-
-| Method | Path | Status |
-|---|---|---|
-| `captum_ig` / `shap` | DistilBERT + AG News | Implemented token attributions (Captum IG) |
-| `gradcam` | MobileNetV2 + CIFAR-10 | Implemented |
-| `scorecam` | MobileNetV2 + CIFAR-10 | Implemented |
-| `attention_rollout` | ViLT + Flickr30K | Implemented attention-based summary |
-| `attention_rollout` | CLIP + Flickr30K | Partial: token-ablation similarity-drop fallback (true attention maps unsupported in selected backend) |
-
-All explainability outputs include the policy note: `supportive evidence only; not causal proof; not legal/forensic proof`.

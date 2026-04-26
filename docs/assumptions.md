@@ -3,7 +3,6 @@
 ## A-001: Initial validated path modality
 - **Type**: safe default
 - **Choice**: Start with text modality only for first end-to-end validated path.
-- **Reasoning**: CODEX_HANDOFF prioritizes incremental validated progress and identifies DistilBERT/AG News as first critical target.
 - **Configurable**: Yes (`experiment.modality`, model/data modules).
 
 ## A-002: Dataset availability fallback
@@ -33,7 +32,7 @@
 
 ## A-006: Dependency-free bootstrap path
 - **Type**: safe default
-- **Choice**: For Codex reproducibility, the initial smoke/debug/full pipeline uses only Python standard library components.
+- **Choice**: For reproducibility, the initial smoke/debug/full pipeline uses only Python standard library components.
 - **Reasoning**: Current Codex environment can block package installation; dependency-free path guarantees runnable validation commands.
 - **Configurable**: Yes (future phases can switch to torch/transformers by replacing model/data modules).
 

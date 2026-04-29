@@ -57,25 +57,6 @@ python scripts/eval.py --config configs/debug.yaml --run-dir outputs/debug_text_
 ```
 
 
-## Codex reproducible setup
-
-For a clean Codex/container run:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements-dev.txt
-```
-
-Then run:
-
-```bash
-pytest -q
-python scripts/train.py --config configs/smoke.yaml
-python scripts/eval.py --config configs/smoke.yaml --run-dir outputs/smoke_text_b4_seed0
-```
-
 ## Required commands maintained
 
 - `python scripts/train.py --config configs/smoke.yaml`
